@@ -2,32 +2,32 @@ const cardModel = require("../../src/controller/cardController");
 const connection = require("../../src/db/connection/connection");
 const Card = [
 	{
-		_id: "1",
+		_id: "UHDYn755TE6qBfDH8hlwmg==",
 		type: "venda",
 		title: "Vende-se Sofá usado",
 		description:
 			"Sofá usado ideal para queimar em dia de frio ou para cama de cachorro",
 		body: "Sofá de três lugares preto, com apenas dois furos pela bagatela de 500,00 R$. Interessados entrar em contato com o 101A",
-		_userId: "teste",
+		_userId: "XMa8bdt3TUieCF5R7sF/Yg==",
 		imgPath: "/cardPhotos/sofá",
 	},
 	{
-		_id: "2",
+		_id: "dHq+EntatEm1lzflDKGexQ==",
 		type: "doacao",
 		title: "doa-se Sofá usado",
 		description:
 			"Sofá usado ideal para queimar em dia de frio ou para cama de cachorro",
 		body: "Sofá de três lugares preto, com apenas dois furos. Interessados entrar em contato com o 101A",
-		_userId: "teste",
+		_userId: "tXMa8bdt3TUieCF5R7sF/Yg==",
 		imgPath: "/cardPhotos/sofá",
 	},
 	{
-		_id: "3",
+		_id: "LNQ0Yd2flk2mlRKEVFFF8g==",
 		type: "aviso",
 		title: "Sofá usado abandonado no condominio",
 		description: "Sofá usado servindo de cama para cachorro",
 		body: "Sofá de três lugares preto, rasgado jogado no condominio. Responsavel pelo abandono, favor retirar imediatamente",
-		_userId: "teste",
+		_userId: "XMa8bdt3TUieCF5R7sF/Yg==",
 		imgPath: "/cardPhotos/sofá",
 	},
 ];
@@ -35,12 +35,11 @@ const Card = [
 describe("Test cardModel", () => {
 	beforeAll(async () => {
 		connection.connect();
-	});
-	afterAll(async () => {
 		await cardModel.CardModel.deleteMany({
 			title: Card.map((item) => item.title),
 		});
 	});
+	afterAll(async () => {});
 	it("should test insert Cards", async () => {
 		await cardModel.insertCard(Card);
 		expect(Card).toStrictEqual(
@@ -82,6 +81,6 @@ describe("Test cardModel", () => {
 			await cardModel.CardModel.distinct("_id", {})
 		);
 		await cardModel.deleteCard(cardToDelete[0]);
-		expect(await cardModel.CardModel.find({ type: "venda" })).toStrictEqual([]);
+		expect(await cardModel.CardModel.find({ type: "aviso" })).toStrictEqual([]);
 	});
 });
