@@ -69,8 +69,8 @@ Nos avisos, ele pode excluir ou adicionar um card. E o objetivo é que todo mund
 Chat para os moradores estabelecerem conversas publicas ou privadas.
 
 ### Email
--Sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
--Sistema de envio de email para alteração de senha quando um novo usuário for cadastrado.
+- Sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
+- Sistema de envio de email para alteração de senha quando um novo usuário for cadastrado.
 
 
 
