@@ -1,6 +1,7 @@
 const res = require("express/lib/response");
 const mongoose = require("mongoose");
 const CardSchema = require("../db/schema/cardSchema");
+const validator = require("../utils/validators/cardValidator");
 
 const CardModel = mongoose.model("card", CardSchema);
 
@@ -11,18 +12,20 @@ const card = {
 		}
 		return CardModel.find({});
 	},
-	async insertCard(cardObj) {
-		try {
-			await CardModel.insertMany(cardObj);
-			return {
-				statusCode: 200,
-				error: "ok",
-			};
-		} catch (error) {
-			return {
-				statusCode: 500,
-				error: "internal error",
-			};
+	async insertCard(cardArray) {
+		if (!validator.hasInvalidField(cardArray)) {
+			try {
+				await CardModel.insertMany(cardArray);
+				return {
+					statusCode: 200,
+					error: "ok",
+				};
+			} catch (error) {
+				return {
+					statusCode: 500,
+					error: "internal error",
+				};
+			}
 		}
 	},
 	async deleteCard(_id) {

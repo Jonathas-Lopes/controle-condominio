@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const UserSchema = require("../db/schema/userSchema");
+const validator = require("../utils/validators/userValidator");
 
 const UserModel = mongoose.model("user", UserSchema);
 
@@ -10,14 +11,16 @@ const user = {
 		}
 		return UserModel.find({});
 	},
-	async insertUser(userOBJ) {
-		try {
-			return UserModel.insertMany(userOBJ);
-		} catch (error) {
-			return {
-				statusCode: 500,
-				error: "internal error",
-			};
+	async insertUser(userArray) {
+		if (!validator.hasInvalidField(userArray)) {
+			try {
+				return UserModel.insertMany(userArray);
+			} catch (error) {
+				return {
+					statusCode: 500,
+					error: "internal error",
+				};
+			}
 		}
 	},
 	async deleteUser(cpf) {
