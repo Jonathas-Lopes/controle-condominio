@@ -63,11 +63,12 @@ Na página de eventos, ele pode editar as informações, excluir ou adicionar um
 
 Nos avisos, ele pode excluir ou adicionar um card. E o objetivo é que todo mundo receba um email quando um aviso for publicado.
 
-### Interação
+## Interação
 
-## Chat
+### Chat
 Chat para os moradores estabelecerem conversas publicas ou privadas.
-## Email
+
+### Email
 -Sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
 -Sistema de envio de email para alteração de senha quando um novo usuário for cadastrado.
 
