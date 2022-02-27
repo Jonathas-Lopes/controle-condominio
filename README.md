@@ -94,6 +94,10 @@ Chat para os moradores estabelecerem conversas publicas ou privadas.
 - jest
 - dotenv
 
+#### dev dependencies
+- jest
+- nodemon
+
 ## Organização de pastas e arquivos
 ```shell
 /
