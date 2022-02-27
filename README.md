@@ -1,10 +1,8 @@
-<p align="center"><img src="public/img/NomeVerde.png" width="400"></p>
-
-> Aplicação disponível no Heroku: [UNIU](http://uniu-evapericorashid.herokuapp.com/)
 
 
 
-## Sobre o UNIU
+
+## Sobre o projeto
 
 A plataforma nasceu com a missão de ser uma rede social para ambientes residenciais fechados. Hoje, os moradores acabam se organizando através de grupos de Whatsapp ou Facebook, que não são ideais para essa finalidade, porque todo  mundo pode postar tudo o que quiser. Então, as informações importantes se perdem e a interação entre os moradores não acontece de uma forma saudável.
 
@@ -65,18 +63,15 @@ Na página de eventos, ele pode editar as informações, excluir ou adicionar um
 
 Nos avisos, ele pode excluir ou adicionar um card. E o objetivo é que todo mundo receba um email quando um aviso for publicado.
 
-## Próximos passos
+### Interação
 
-A evolução da ferramenta consiste na implementação:
-- do chat para os moradores estabelecerem conversas privadas;
-- do sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
-- da funcionalidade de adicionar uma nova área de lazer e editar as existentes;
-- da integração da agenda de eventos com as reservas realizadas pelos moradores;
-- da galeria de fotos dos eventos;
-- e de uma aba para registro de ocorrências, onde o morador preencherá um formulário, poderá anexar arquivos e enviará para o síndico, que tomará as providências devidas.
+## Chat
+Chat para os moradores estabelecerem conversas publicas ou privadas.
+## Email
+-Sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
+-Sistema de envio de email para alteração de senha quando um novo usuário for cadastrado.
 
 
-<p align="center"><img src="public/img/LogoVerde.png" width="150"></p>
-<h5 align="center">Obrigado por se interessar por nosso projeto!</h5>
+
 
 
