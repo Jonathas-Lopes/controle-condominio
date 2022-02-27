@@ -71,7 +71,96 @@ Chat para os moradores estabelecerem conversas publicas ou privadas.
 ### Email
 - Sistema de envio de e-mail para o cadastro e informando toda vez que houver um novo aviso inserido;
 - Sistema de envio de email para alteração de senha quando um novo usuário for cadastrado.
+- 
+## Stack
+### Frontend:
+- Javascript
+- Vuejs
+- Vuex
+- vuetify
+- socket.io
+- Spa
+- VueRouter
 
+### Backend:
+- Nodejs
+- Javascript
+- Express
+- Socket.io
+- Node-fetch
+- Mongodb
+- Mongoose
+- Joi
+- jest
+- dotenv
+
+## Organização de pastas e arquivos
+```shell
+/
+  server/
+    entrypoint/
+      server.js
+    src/
+      controller/
+      db/
+        connection/
+        schema/
+      integrations/
+      private/
+      public/
+      routes/
+      sockets/
+      utils/
+      tests/
+      app.js
+  client/
+    public/
+      favicon
+      index.html
+    src/
+      assets/
+      components/
+      methods/
+      plugins/
+      router/
+      store/
+      views/
+      App.vue
+      main.js
+```
+## Controle-Condomínio Database
+
+### users
+
+```shell
+{
+		_id: "",
+		email: "",
+		password: "",
+		name: "",
+		cpf: "",
+		apt: "",
+		torre: "",
+		admin: bool,
+		imgPath: ""
+	}
+```
+### cards
+
+```shell
+{
+		_id: "",
+		type: "",
+		title: "",
+		description:"",
+		body: "",
+		_userId: "",
+		imgPath: ""
+	}
+```
+## Comandos de inicialização:
+- Backend: npm run start:dev
+- Frontend: npm run start:dev
 
 
 
