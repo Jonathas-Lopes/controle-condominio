@@ -6,7 +6,7 @@ const Types = ["doacao", "aviso", "venda", "reserva"];
 const CardSchema = new Schema({
 	_id: {
 		type: String,
-		required: true,
+		required: false,
 		unique: true,
 	},
 	type: {
