@@ -26,18 +26,7 @@ const event = {
 		}
 	},
 	async deleteEvent(_id) {
-		try {
-			await EventModel.deleteOne({ _id });
-			return {
-				statusCode: 200,
-				error: "ok",
-			};
-		} catch (error) {
-			return {
-				statusCode: 500,
-				error: "internal error",
-			};
-		}
+		return EventModel.deleteOne({ _id });
 	},
 	EventModel,
 };

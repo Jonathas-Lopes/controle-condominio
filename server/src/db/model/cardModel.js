@@ -8,14 +8,17 @@ const card = {
 		if (type) {
 			return CardModel.find({ type: type });
 		}
-		return CardModel.find({});
+		return false;
 	},
 
 	async insertCard(cardArray) {
-		await CardModel.insertMany(cardArray);
+		return CardModel.insertMany(cardArray);
 	},
 	async deleteCard(_id) {
-		await CardModel.deleteOne({ _id });
+		if (_id) {
+			return CardModel.deleteOne({ _id });
+		}
+		return false;
 	},
 	CardModel,
 };

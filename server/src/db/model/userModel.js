@@ -8,7 +8,6 @@ const user = {
 		if (_id) {
 			return UserModel.find({ _id: _id });
 		}
-		return UserModel.find({});
 	},
 	async insertUser(userArray) {
 		return UserModel.insertMany(userArray);
