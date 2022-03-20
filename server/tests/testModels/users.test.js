@@ -1,5 +1,5 @@
 const connection = require("../../src/db/connection/connection");
-const userModel = require("../../src/controller/userController");
+const userModel = require("../../src/db/model/userModel");
 const User = [
 	{
 		_id: "XMa8bdt3TUieCF5R7sF/Yg==",

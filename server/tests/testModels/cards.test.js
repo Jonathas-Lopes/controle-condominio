@@ -1,4 +1,4 @@
-const cardModel = require("../../src/controller/cardController");
+const cardModel = require("../../src/db/model/cardModel");
 const connection = require("../../src/db/connection/connection");
 const Card = [
 	{
