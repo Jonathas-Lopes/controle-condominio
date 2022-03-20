@@ -1,24 +1,10 @@
-var express = require("express");
-const res = require("express/lib/response");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const spaceController = require("../controller/spaceController");
 
-router.get("/", async function (req, res, next) {
-	res.send(await spaceController.listSpaces());
-});
-router.get("/:spaceId", async function (req, res, next) {
-	res.send(await spaceController.listSpaces(req.params.spaceId));
-});
-router.post("/new", async function (req) {
-	res.send(await spaceController.insertSpace(req.body));
-});
-router.post("/update", async function (req, res) {
-	res.send(await spaceController.updateSpace(req.body));
-});
-router.get("/delete/:spaceId", async function (req, res) {
-	res.send(await spaceController.deleteSpace(req.params.spaceId));
-});
-router.post("/alocate", async function (req, res) {
-	res.send(await spaceController.alocateSpace(req.body);)
-});
+router.get("/", spaceController.listSpaces);
+router.post("/", spaceController.insertSpace);
+router.put("/", spaceController.updateSpace);
+router.delete("/:spaceId", spaceController.deleteSpace);
+router.put("/alocate", spaceController.alocateSpace);
 module.exports = router;
