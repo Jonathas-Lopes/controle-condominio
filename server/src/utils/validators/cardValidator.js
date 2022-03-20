@@ -9,6 +9,7 @@ const validation = {
 		_userId: Joi.string().length(24).required(),
 		imgPath: Joi.string().regex(/^\/\[a-zA-Z]+\/\[a-zA-Z]+$/),
 	}),
+
 	hasInvalidField: (array) => {
 		array
 			.map((item) => {
@@ -19,6 +20,12 @@ const validation = {
 				}
 			})
 			.includes("error");
+	},
+	hasInvalidCardType: (card) => {
+		if (card === "venda" || card === "doacao" || card === "aviso") {
+			return true;
+		}
+		return false;
 	},
 };
 
