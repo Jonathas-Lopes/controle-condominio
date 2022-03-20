@@ -1,13 +1,14 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+require("express-async-errors");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var cardsRouter = require("./routes/cards");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const cardsRouter = require("./routes/cards");
 
-var app = express();
+const app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -18,5 +19,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/cards", cardsRouter);
+
+app.use((error, req, res) => {
+	res.status(500).send("Algo errado não deu certo");
+});
 
 module.exports = app;
