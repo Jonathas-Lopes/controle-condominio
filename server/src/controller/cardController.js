@@ -1,47 +1,17 @@
-const res = require("express/lib/response");
-const mongoose = require("mongoose");
-const CardSchema = require("../db/schema/cardSchema");
-const validator = require("../utils/validators/cardValidator");
+const cardModel = require("../db/model/cardModel");
 
-const CardModel = mongoose.model("card", CardSchema);
-
-const card = {
-	async listCards(type) {
-		if (type) {
-			return CardModel.find({ type: type });
-		}
-		return CardModel.find({});
+const controller = {
+	async getCards(req, res, _next) {
+		res.send(await cardModel.listCards(req.query.cardType));
 	},
-	async insertCard(cardArray) {
-		if (!validator.hasInvalidField(cardArray)) {
-			try {
-				await CardModel.insertMany(cardArray);
-				return {
-					statusCode: 200,
-					error: "ok",
-				};
-			} catch (error) {
-				return {
-					statusCode: 500,
-					error: "internal error",
-				};
-			}
-		}
+	async newCard(req, res, _next) {
+		res.send(await cardModel.insertCard(req.body));
 	},
-	async deleteCard(_id) {
-		try {
-			await CardModel.deleteOne({ _id });
-			return {
-				statusCode: 200,
-				error: "ok",
-			};
-		} catch (error) {
-			return {
-				statusCode: 500,
-				error: "internal error",
-			};
-		}
+	async updateCard(req, res, _next) {
+		res.send(await cardModel.updateCard(req.body));
 	},
-	CardModel,
+	async deleteCard(req, res, _next) {
+		res.send(await cardModel.deleteCard(req.params.cardId));
+	},
 };
-module.exports = card;
+module.exports = controller;
